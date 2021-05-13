@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import User,auth
+from django.contrib.auth.models import User, auth
 from contacts.models import Contact
+
 
 def register(requests):
     if requests.method == 'POST':
@@ -27,7 +28,7 @@ def register(requests):
                     # Looks good
                     user = User.objects.create_user(username=username, password=password,
                                                     email=email, first_name=first_name, last_name=last_name)
-                    #Login after register
+                    # Login after register
                     # auth.login(requests, user)
                     # messages.success(requests, 'You are now logged in')
                     # return redirect('index')
